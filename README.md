@@ -7,7 +7,7 @@ Required:
   - Public SSH-Key in ~/.ssh/id_rsa.pub
   
 Purpose:
-  Creating a cluster of Virtual Machines via Vagrant. You can ssh into each VM via the user: vagrant such as: `ssh vagrant@<ip-address of the VM>`
+  Creating a cluster of Virtual Machines via Vagrant and DHCP. Collects the IP-Address of each VM in a file. You can then ssh into each VM via the user: vagrant such as: `ssh vagrant@<ip-address of the VM>`
   
 # HowTo
   - Creating <n> VMs: 

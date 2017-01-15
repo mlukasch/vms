@@ -25,25 +25,19 @@ def write_vagrant_file(vagrant_dir, template_file, template_dict):
 
 
 def get_vm_ip(vagrant_dir):
-    print("get_vm_ip : %s" % vagrant_dir)
     output = os.popen("cd %s && vagrant ssh -c \"ifconfig\"" % vagrant_dir).read()
-    print("outtput : %s" % output)
     vm_ip, = re.findall(r"172\.\d{1,3}\.\d{1,3}\.(?!255)\d{1,3}", output)
     return vm_ip
 
 
 def exec_vagrant_vms(command):
-    print("exec_vagrnat_vms : %s" % command)
     current_dir = os.getcwd()
-    print("exec_vagrant: currentdir %s" % current_dir)
     for sub_dir in os.listdir(current_dir):
         if os.path.isdir(sub_dir) and sub_dir.startswith("server"):
             sub_dir_abs = os.path.join(current_dir, sub_dir)
-            print("subdir : %s" % sub_dir_abs)
             os.system("cd %s && vagrant %s -f" % (sub_dir_abs, command))
             if command == "destroy":
                 os.system("rm -rf %s" % sub_dir_abs)
-                print("ips : %s" % os.path.join(current_dir, "ips.txt"))
                 os.system("rm -f %s" % os.path.join(current_dir, "ips.txt"))
 
 
@@ -53,5 +47,4 @@ command_dict = {
 
 if len(sys.argv) > 1:
     command = sys.argv[1]
-    print("command : %s" % command)
     command_dict[command](*sys.argv[1:])

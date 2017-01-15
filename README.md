@@ -4,9 +4,10 @@ Required:
   - Vagrant
   - Linux
   - Python3
+  - Public SSH-Key in ~/.ssh/id_rsa.pub
   
 Purpose:
-  Creating a cluster of Virtual Machines via Vagrant.
+  Creating a cluster of Virtual Machines via Vagrant. You can ssh into each VM via the user: vagrant such as: `ssh vagrant@<ip-address of the VM>`
   
 # HowTo
   - Creating <n> VMs: 

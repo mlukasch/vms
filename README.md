@@ -8,7 +8,7 @@ Required:
 Purpose:
   Creating a cluster of Virtual Machines via Vagrant.
   
-# HowTp
+# HowTo
   - Creating <n> VMs: 
       `python3 vms.py create <n>`
     This will create server-subfolders for each VM in the current directory.

@@ -14,7 +14,7 @@ Purpose:
       ```
           python3 vms.py create <n>
       ```
-    where <n> is the number of VMs to be created.  
+    where `<n>` is the number of VMs to be created.  
     This will create server-subfolders for each VM in the current directory.
     Also a file ips.txt will be created with the IP-addresses of all VMs.
   - Deleting/Stopping VMs: 

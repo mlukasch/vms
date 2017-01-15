@@ -21,3 +21,6 @@ Purpose:
           python3 vms.py <command>
       ```
     with `<command> = destroy`: This will destroy & delete all VMs
+
+# TODO
+  - Parametrize the OS (currently Ubuntu-Precise).

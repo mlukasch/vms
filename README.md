@@ -19,4 +19,4 @@ Purpose:
       ```
           python3 vms.py <command>
       ```
-    <command> = destroy: This will destroy & delete all VMs
+    with `<command> = destroy`: This will destroy & delete all VMs

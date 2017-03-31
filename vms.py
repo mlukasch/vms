@@ -8,7 +8,7 @@ import sys
 def user_interface():
     os_dict = {1: "ubuntu/precise64",
                2: "debian/jessie64",
-               3: "fedora/25-cloud-base",
+               3: "fedora/24-cloud-base",
                4: "centos/7"}
     input_text_os = [
         "For the name of other OS see: https://atlas.hashicorp.com/boxes/search for OS.",
@@ -29,8 +29,8 @@ def create_vagrant_vms(vm_count, chosen_os):
         sub_dir = os.path.join(current_dir, "server%s" % index)
         os.system("mkdir -p %s" % sub_dir)
         template_file = open("Vagrantfile_template")
-        write_vagrant_file(sub_dir, template_file, {"chosen_os": chosen_os})
-        os.system("cd %s && vagrant up" % sub_dir)
+        write_vagrant_file(sub_dir, template_file, {"chosen_os": chosen_os, "hostname": "vm%d" % index})
+        os.system("cd %s && vagrant up --provider virtualbox" % sub_dir)
         ips.append(get_vm_ip(sub_dir))
     ip_file = os.path.join(current_dir, "ips.txt")
     with open(ip_file, "w") as file:

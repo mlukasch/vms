@@ -34,7 +34,7 @@ def create_vagrant_vms(vm_count, chosen_os):
         ips.append(get_vm_ip(sub_dir))
     ip_file = os.path.join(current_dir, "ips.txt")
     with open(ip_file, "w") as file:
-        ips.append("")
+        ips.insert(0, "[all]")
         file.write(os.linesep.join(ips))
 
 

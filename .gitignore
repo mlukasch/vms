@@ -1,5 +1,4 @@
 .idea
 server*
 ips.txt
-*.yml
 *.cfg

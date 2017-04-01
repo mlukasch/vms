@@ -2,3 +2,4 @@
 server*
 ips.txt
 *.yml
+*.cfg
